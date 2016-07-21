@@ -1,11 +1,15 @@
 package com.github.MySyns.Utils;
 
 import org.anjocaido.groupmanager.GroupManager;
+import org.anjocaido.groupmanager.data.User;
 
 public class GMHolder {
 	private static GroupManager gm;
 	public GMHolder(GroupManager gm) {
 		this.gm = gm;
-		gm.
+	}
+	public static void updatePlayerPms(String name,User user) {
+		name = name.toLowerCase();
+		gm.getWorldsHolder().getWorldDataByPlayerName(name).addUser(user);
 	}
 }
