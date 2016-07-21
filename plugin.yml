@@ -1,0 +1,8 @@
+name: MySysn
+main: com.github.MySysn.MySysn
+version: 1.0
+depend: [Vault，GroupManager]
+commands: 
+  mysysn: 
+    description: MySysn plugin.
+    usage: /mysysn  查看命令帮助
