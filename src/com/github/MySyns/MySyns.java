@@ -21,30 +21,28 @@ import com.github.MySyns.Utils.Sql.SqlHolder;
 
 
 public class MySyns extends JavaPlugin {	
-
 	public PluginManager pm;
-	
 	@Override
 	public void onEnable()  {
-		getLogger().info("MySyns²å¼şÒÑ±»¼ÓÔØ");
-		getLogger().info("×¢²áÊÂ¼ş..");
+		getLogger().info("MySynsæ’ä»¶å·²è¢«åŠ è½½");
+		getLogger().info("æ³¨å†Œäº‹ä»¶..");
 		pm = Bukkit.getPluginManager();
 		pm.registerEvents(new PlayerListener(this), this);
 		pm.registerEvents(new GMListener(this),this);
 		
-		getLogger().info("»ñÈ¡GroupManagerHook..");
+		getLogger().info("è·å–GroupManagerHook..");
 		new GMHolder((GroupManager) pm.getPlugin("GroupManager"));
 		
 		getLogger().info("HOOK Vault..");
 		new VaultHolder();
 		
-		getLogger().info("¶ÁÈ¡ÅäÖÃÎÄ¼ş..");
+		getLogger().info("è¯»å–é…ç½®æ–‡ä»¶..");
 		new SynsConfig(this);
 		
-		getLogger().info("Á¬½ÓÊı¾İ¿â..");
+		getLogger().info("è¿æ¥æ•°æ®åº“..");
 		SqlHolder.init();
 		
-		getLogger().info("¼ÓÔØÍ¬²½ÏµÍ³..");
+		getLogger().info("åŠ è½½åŒæ­¥ç³»ç»Ÿ..");
 		new SynsWorker(this);
 	}
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args)  {
