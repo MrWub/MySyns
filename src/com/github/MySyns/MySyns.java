@@ -31,14 +31,21 @@ public class MySyns extends JavaPlugin {
 		pm = Bukkit.getPluginManager();
 		pm.registerEvents(new PlayerListener(this), this);
 		pm.registerEvents(new GMListener(this),this);
+		
 		getLogger().info("获取GroupManagerHook..");
 		new GMHolder((GroupManager) pm.getPlugin("GroupManager"));
+		
 		getLogger().info("HOOK Vault..");
 		new VaultHolder();
+		
 		getLogger().info("读取配置文件..");
 		new SynsConfig(this);
+		
 		getLogger().info("连接数据库..");
 		SqlHolder.init();
+		
+		getLogger().info("加载同步系统..");
+		new SynsWorker(this);
 	}
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args)  {
 		return false;
