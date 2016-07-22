@@ -12,4 +12,8 @@ public class GMHolder {
 		name = name.toLowerCase();
 		gm.getWorldsHolder().getWorldDataByPlayerName(name).addUser(user);
 	}
+	public static User getUserByName(String name) {
+		name = name.toLowerCase();
+		return gm.getWorldsHolder().getWorldDataByPlayerName(name).getUser(name);
+	}
 }

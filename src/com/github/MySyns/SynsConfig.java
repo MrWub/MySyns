@@ -5,7 +5,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class SynsConfig {
 	private static MySyns main;
 	public static String host,port,dbName ,userName,passwd,
-	tableName = "SynsData";
+	userTableName = "UserSynsData";
 	
 	private static FileConfiguration f;
 	public SynsConfig(MySyns plugin) {

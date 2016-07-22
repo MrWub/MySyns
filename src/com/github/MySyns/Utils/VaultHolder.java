@@ -25,4 +25,7 @@ public class VaultHolder {
 		else
 			economy.withdrawPlayer(player, has-money);
 	}
+	public static double getPlayerMoney(OfflinePlayer player) {
+		return economy.getBalance(player);
+	}
 }

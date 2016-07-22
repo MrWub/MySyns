@@ -35,7 +35,7 @@ public class MySyns extends JavaPlugin {
 		getLogger().info("获取GroupManagerHook..");
 		new GMHolder((GroupManager) pm.getPlugin("GroupManager"));
 		
-		getLogger().info("HOOK Vault..");
+		getLogger().info("获取Vault..");
 		new VaultHolder();
 		
 		getLogger().info("读取配置文件..");
@@ -45,6 +45,7 @@ public class MySyns extends JavaPlugin {
 		SqlHolder.init();
 		
 		getLogger().info("加载同步系统..");
+		new SynsSender(this);
 		new SynsWorker(this);
 	}
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args)  {

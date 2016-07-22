@@ -31,9 +31,11 @@ public class SqlHolder {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			c = DriverManager.getConnection(url);
-			if (!tableExists(SynsConfig.tableName)) 
-				createTable(SynsConfig.tableName,
-						"name VARCHAR(255) not null,data text","name");
+			if (!tableExists(SynsConfig.userTableName)) 
+				createTable(SynsConfig.userTableName,"name VARCHAR(255) not null,data text","name");
+			/*if (!tableExists(SynsConfig.GMTableName)) 
+				createTable(SynsConfig.GMTableName,"name VARCHAR(255) not null,data text","name");*/
+	
 			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
