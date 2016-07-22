@@ -32,7 +32,7 @@ public class MySyns extends JavaPlugin {
 		pm.registerEvents(new PlayerListener(this), this);
 		pm.registerEvents(new GMListener(this),this);
 		
-		getLogger().info("获取GroupManagerHook..");
+		getLogger().info("获取GroupManager..");
 		new GMHolder((GroupManager) pm.getPlugin("GroupManager"));
 		
 		getLogger().info("获取Vault..");
@@ -47,6 +47,10 @@ public class MySyns extends JavaPlugin {
 		getLogger().info("加载同步系统..");
 		new SynsSender(this);
 		new SynsWorker(this);
+		
+		if (!SynsConfig.groupFilePath.equalsIgnoreCase("local")) GMHolder.loadGroupsFile(SynsConfig.groupFilePath);
+		if (!SynsConfig.userFilePath.equalsIgnoreCase("local")) GMHolder.loadUsersFile(SynsConfig.userFilePath);
+		
 	}
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args)  {
 		return false;

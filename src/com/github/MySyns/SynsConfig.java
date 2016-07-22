@@ -4,7 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class SynsConfig {
 	private static MySyns main;
-	public static String host,port,dbName ,userName,passwd,
+	public static String host,port,dbName ,userName,passwd,groupFilePath,userFilePath,
 	userTableName = "UserSynsData";
 	
 	private static FileConfiguration f;
@@ -22,6 +22,8 @@ public class SynsConfig {
 			dbName=f.getString("mysql.dbname");
 			userName=f.getString("mysql.username");
 			passwd=f.getString("mysql.passwd");
+			groupFilePath=f.getString("gmsrc.groupsfilepath");
+			userFilePath=f.getString("gmsrc.usersfilepath");
 		} catch(Exception e) {
 			e.printStackTrace();
 			return false;

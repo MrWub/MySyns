@@ -4,3 +4,7 @@ mysql:
   dbname: MineCraft
   username: root
   passwd: 123456
+
+gmsrc: 
+  groupsfilepath: 'local'
+  usersfilepath: 'local'
